@@ -193,10 +193,15 @@ set -e
 hash -r
 
 # Pylibmc support.
-# See [`bin/steps/pylibmc`](pylibmc.html).
+# See [`bin/steps/Pylibmc`](pylibmc.html).
 bpwatch start pylibmc_install
   source $BIN_DIR/steps/pylibmc
 bpwatch stop pylibmc_install
+
+# libffi support.
+bpwatch start libffi_install
+	source $BIN_DIR/steps/libffi
+bpwatch start libffi_install
 
 # GeoDjango support. (GEOS, Proj.4, GDAL)
 # See [`bin/steps/geos`](geos.html).
