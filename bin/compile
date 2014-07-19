@@ -198,6 +198,11 @@ bpwatch start pylibmc_install
   source $BIN_DIR/steps/pylibmc
 bpwatch stop pylibmc_install
 
+
+# Pysqlite support.
+# See [`bin/steps/pysqlite`](pysqlite.html).
+source $BIN_DIR/steps/pysqlite
+
 # libffi support.
 bpwatch start libffi_install
 	source $BIN_DIR/steps/libffi
