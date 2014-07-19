@@ -18,9 +18,11 @@ if (grep -Fiq "pysqlite" requirements.txt) then
   cd .heroku
 
   if [ -e "vendor/lib/libsqlite3.so" ]; then
-    export SQLITE=$(pwd)/vendor
+    echo "-----> lib already there !"
+	export SQLITE=$(pwd)/vendor
   else
-    # Download and extract sqlite into target vendor directory.
+    echo "-----> prepare to download sqlite dynamic library !"
+	# Download and extract sqlite into target vendor directory.
     curl -s -L -o tmp-sqlite.tar.gz $VENDORED_SQLITE
     tar -zxvf tmp-sqlite.tar.gz > /dev/null
     rm tmp-sqlite.tar.gz
