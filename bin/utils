@@ -67,3 +67,12 @@ function deep-rm (){
 function build_path() {
     echo "$BUILD_DIR/$1"
 }
+
+# Buildpack Steps. Usage:
+#
+#     $ puts_step "Step #1"
+#     -----> Step #1
+function puts_step() {
+    time_step
+    echo "-----> $@"
+}
