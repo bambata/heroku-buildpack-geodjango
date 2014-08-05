@@ -59,4 +59,11 @@ function deep-rm (){
   find -H $1 -maxdepth 1 -name '.*' -a \( -type d -o -type f -o -type l \) -exec rm -fr '{}' \;
 }
 
-
+# Returns an absolute path to the given directory, relative to the build pack.
+# Usage:
+#
+#     $ build_path ".heroku/python"
+#     /app/.heroku/python
+function build_path() {
+    echo "$BUILD_DIR/$1"
+}
