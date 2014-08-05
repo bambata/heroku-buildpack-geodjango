@@ -76,3 +76,29 @@ function puts_step() {
     time_step
     echo "-----> $@"
 }
+
+
+# Prints the elapsed time in seconds since the last time it was called if
+# longer than the threshold (10s). Usage:
+#
+#     $ time_step
+#     $ sleep 15
+#     $ time_step
+#     Elapsed time (in seconds): 15
+function time_step() {
+    if [[ -n "$DISABLE_TIME_STEPS" ]]; then
+        return
+    fi
+    if [[ -z "$TIME_SINCE_LAST_STEP" ]]; then
+        export TIME_SINCE_LAST_STEP=$(date +%s)
+        return
+    fi
+
+    local threshold=${TIME_STEPS_THRESHOLD:-10}
+    local current_time=$(date +%s)
+    local difference=$((current_time-TIME_SINCE_LAST_STEP))
+    export TIME_SINCE_LAST_STEP="$current_time"
+    if [[ "$difference" -gt "$threshold" ]]; then
+        echo "Elapsed time (in seconds): $difference" | indent
+    fi
+}
