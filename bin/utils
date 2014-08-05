@@ -102,3 +102,13 @@ function time_step() {
         echo "Elapsed time (in seconds): $difference" | indent
     fi
 }
+
+
+# Usage: $ download_package tarball_url location
+function download_package() {
+    local package="$1"
+    local location="$2"
+
+    mkdir -p $location
+    curl $package -s -o - | tar xzf - -C $location
+}
