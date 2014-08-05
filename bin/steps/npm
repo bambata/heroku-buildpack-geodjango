@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+PROFILE_DIR="$BUILD_DIR/.profile.d"
 NODE_DIR="/app/vendor/node"
 NODE_VERSION=${NODE_VERSION:-"0.10.26"}
 NODE_INCLUDE_PATH="$NODE_DIR/include"
