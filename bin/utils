@@ -103,6 +103,10 @@ function time_step() {
     fi
 }
 
+function set_env_override() {
+    echo "export $1=$2" >> ${3:-$PROFILE_PATH}
+}
+
 
 # Usage: $ download_package tarball_url location
 function download_package() {
@@ -111,4 +115,9 @@ function download_package() {
 
     mkdir -p $location
     curl $package -s -o - | tar xzf - -C $location
+}
+
+
+function app_path() {
+    echo "\$HOME/$1"
 }

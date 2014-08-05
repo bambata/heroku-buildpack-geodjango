@@ -3,6 +3,7 @@
 NODE_DIR="/app/vendor/node"
 NODE_VERSION=${NODE_VERSION:-"0.10.26"}
 NODE_INCLUDE_PATH="$NODE_DIR/include"
+NPM_BIN_DIR="node_modules/.bin"
 NODE_PROFILE_PATH="$PROFILE_DIR/node.sh"
 
 export PATH="$NODE_DIR/bin:$PATH"
