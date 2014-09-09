@@ -205,12 +205,12 @@ bpwatch stop pylibmc_install
 source $BIN_DIR/steps/pysqlite
 
 # libffi support.
-#bpwatch start libffi_install
-#	source $BIN_DIR/steps/libffi
-#bpwatch start libffi_install
+bpwatch start libffi_install
+	source $BIN_DIR/steps/libffi
+bpwatch start libffi_install
 
 # Libffi support.
-source $BIN_DIR/steps/cryptography
+#source $BIN_DIR/steps/cryptography
 
 # GeoDjango support. (GEOS, Proj.4, GDAL)
 # See [`bin/steps/geos`](geos.html).
