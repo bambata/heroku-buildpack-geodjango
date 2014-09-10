@@ -22,6 +22,8 @@ if (grep -Eiq "^\s*cffi" requirements.txt || grep -Eiq "^\s*cryptography" requir
   #tar -zxvf tmp-libffi.tar.gz > /dev/null
   #rm tmp-libffi.tar.gz
   
+  mkdir -p .heroku/vendor
+  
   curl $VENDORED_LIBFFI -s | tar zxv -C .heroku/vendor &> /dev/null
 
   # Add libffi's to PKG_CONFIG_PATH
