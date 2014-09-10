@@ -13,7 +13,7 @@ source $BIN_DIR/utils
 if (grep -Eiq "^\s*cffi" requirements.txt || grep -Eiq "^\s*cryptography" requirements.txt) then
   echo "-----> Noticed cffi. Bootstrapping libffi."
   
-  #PREV_DIR=$(pwd)
+  PREV_DIR=$(pwd)
   #mkdir -p "$VENDORED_PATH"
   #cd "$VENDORED_PATH"
 
@@ -36,7 +36,7 @@ if (grep -Eiq "^\s*cffi" requirements.txt || grep -Eiq "^\s*cryptography" requir
   #  echo "libffi.pc is in-place at $(pwd)/vendor/lib/pkgconfig/libffi.pc, libffi-based builds should work!"
   #fi
 
-  #cd "$PREV_DIR"
+  cd "$PREV_DIR"
 fi
 
 
