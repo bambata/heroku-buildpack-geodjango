@@ -21,10 +21,14 @@ else
     echo "Installing node..." | indent
     download_package "http://s3pository.heroku.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" "$BUILD_DIR"
     
-    ls $BUILD_DIR
+    mkdir -p $NODE_DIR
     
     # Move node (and npm) into ./vendor and make them executable
     mv "$BUILD_DIR/node-v$NODE_VERSION-linux-x64" "$NODE_DIR"
+    
+    ls $NODE_DIR
+    ls $BUILD_DIR/node-v$NODE_VERSION-linux-x64
+    
     chmod +x $NODE_DIR/bin/*
 fi
 
