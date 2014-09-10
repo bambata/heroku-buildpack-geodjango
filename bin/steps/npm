@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 PROFILE_DIR="$BUILD_DIR/.profile.d"
+VENDOR_PATH="/app/vendor"
 NODE_DIR="/app/vendor/node"
 NODE_VERSION=${NODE_VERSION:-"0.10.26"}
 NODE_INCLUDE_PATH="$NODE_DIR/include"
@@ -13,6 +14,8 @@ export CPPPATH="$NODE_INCLUDE_PATH"
 
 # Let's get started...
 puts_step "Installing node packages using node version $NODE_VERSION"
+
+mkdir -p $VENDOR_PATH
 
 if [ ! "$FRESH_NODE" ] && [ -d "$NODE_DIR" ]; then
     echo "Using node ($NODE_VERSION)" | indent
