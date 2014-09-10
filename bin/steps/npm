@@ -24,7 +24,7 @@ else
     mkdir -p $NODE_DIR
     
     # Move node (and npm) into ./vendor and make them executable
-    mv "$BUILD_DIR/node-v$NODE_VERSION-linux-x64/" "$NODE_DIR"
+    mv "$BUILD_DIR/node-v$NODE_VERSION-linux-x64/*" "$NODE_DIR"
 
     ls $NODE_DIR
     
